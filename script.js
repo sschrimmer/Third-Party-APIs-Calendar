@@ -20,9 +20,8 @@ $(function () {
   var hour = moment().hours();
   var userInput;
   var hourSpan;
-
-}
-var interval = setInterval(function() {
+  
+  var interval = setInterval(function() {
   var momentNow = moment();
   $('currentDay').html(momentNow.format('YYYY MMMM DD') + '  '
   + momentNow.format('dddd')
@@ -82,7 +81,8 @@ function background () {
 }
   });
 }
-$(document).ready(function)(){
+$(document).ready(function() {
+
   initPage()
   background()
 
@@ -92,11 +92,10 @@ $(document).ready(function)(){
     hourSpan = $(this).siblings(".input-group-prepend").text().trim();
     console.log(hourSpan);
     localStorage.setItem(hourSpan, JSON.stringify(userInput));
-  
+
   })
   $("#clearDay").on("click", function(){
     localStorage.clear();
     initPage()
   })
-
-}):
+})
