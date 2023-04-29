@@ -86,5 +86,17 @@ $(document).ready(function)(){
   initPage()
   background()
 
-  $(".saveBtn").on
-}
+  $(".saveBtn").on("click", function(){
+    userInput = $(this).siblings(".form-control").val().trim();
+    console.log(userInput);
+    hourSpan = $(this).siblings(".input-group-prepend").text().trim();
+    console.log(hourSpan);
+    localStorage.setItem(hourSpan, JSON.stringify(userInput));
+  
+  })
+  $("#clearDay").on("click", function(){
+    localStorage.clear();
+    initPage()
+  })
+
+}):
