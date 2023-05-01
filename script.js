@@ -5,17 +5,17 @@ $(function () {
   var currentDate = moment(). format('dddd') + " " + moment().format("Do MMM YYYY");
   var currentHour = moment().format('h:mm:ss a');
 
-  var nineAm = $("#9am");
-  var tenAm = $("#10am");
-  var elevenAm = $("#11am");
-  var twelvePm = $("#12pm");
-  var onePm = $("#1pm");
-  var twoPm = $("#2pm");
-  var threePm = $("#3pm");
-  var fourPm = $("#4pm");
-  var fivePm = $("#5pm");
-  var sixPm= $("#6pm");
-  var sevenPm = $("#7pm");
+  var nineAm = $("#9");
+  var tenAm = $("#10");
+  var elevenAm = $("#11");
+  var twelvePm = $("#12");
+  var onePm = $("#13");
+  var twoPm = $("#14");
+  var threePm = $("#15");
+  var fourPm = $("#16");
+  var fivePm = $("#17");
+  var sixPm= $("#18");
+  var sevenPm = $("#19");
   
   var hour = moment().hours();
   var userInput;
@@ -62,15 +62,15 @@ function initPage() {
   sixPm.val(init6);
 
   var init7 = JSON.parse(localStorage.getItem("07:00 pm"));
-  nineAm.val(init7);
+  sevenPm.val(init7);
 }
 
 function background () {
   $(".form-control").each(function () {
     var timeTest = parseInt($(this).attr("id"));
-    hour = parseInt(hour);
-    console.log(timeTest);
-    console.log(hour);
+    // hour = parseInt(hour); 
+    console.log ("hourBlock", timeTest, typeof timeTest);
+    console.log("currentHour", hour, typeof hour);
 
     if (hour > timeTest) {
       $(this).addClass("past");
@@ -98,4 +98,5 @@ $(document).ready(function() {
     localStorage.clear();
     initPage()
   })
+})
 })
